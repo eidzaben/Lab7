@@ -1,5 +1,5 @@
 
-public class StackHospital
+public class StackHospital extends Hospital
 {
 
 }

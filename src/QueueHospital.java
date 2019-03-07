@@ -1,5 +1,5 @@
 
-public class QueueHospital
+public class QueueHospital extends Hospital
 {
 
 }

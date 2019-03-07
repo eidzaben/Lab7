@@ -1,5 +1,5 @@
 
-public class SickPerson
+public class SickPerson extends Person
 {
 
 }
