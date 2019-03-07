@@ -1,28 +1,44 @@
 
-public class PriorityQueueHospital<PatientType> extends Hospital
-{
+import java.util.PriorityQueue;
 
-    public void addPatient(PatientType patient) {
-        
+public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
+{
+    private PriorityQueue<PatientType> hospital;
+    public PriorityQueueHospital() {
+        hospital = new PriorityQueue<PatientType>();
     }
     
-    public PatientType nextPatient() {
-        
+    public void addPatient(PatientType patient)
+    {
+           hospital.add(patient);
     }
-    
-    public PatientType treatNextPatient() {
-        
+
+    public PatientType nextPatient()
+    {
+       return hospital.peek();
     }
-    
-    public int numPatients() {
-        
+
+    public PatientType treatNextPatient()
+    {
+       return hospital.remove();
     }
-    
-    public String hospitalType() {
-        
+
+    public int numPatients()
+    {
+        return hospital.size();
     }
-    
-    public String allPatientInfo() {
-        
+
+    public String hospitalType()
+    {
+        return "Priority Queue Hospital";
+    }
+
+    public String allPatientInfo()
+    {
+        String all = "";
+        while(hospital.size() > 0) {
+            all.concat(hospital.remove().toString());
+        }
+        return all;
     }
 }
