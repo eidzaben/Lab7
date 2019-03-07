@@ -1,28 +1,52 @@
+import java.util.AbstractList;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Queue;
 
-public class QueueHospital<PatientType> extends Hospital
+
+public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
+    private Queue<PatientType> hospital = new LinkedList<PatientType>();;
+    ListIterator<String> listIterator;
+    public QueueHospital() {
+        hospital = new LinkedList<PatientType>();
+    }
+    
+    
+    public void addPatient(PatientType patient)
+    {
+        hospital.add(patient);
+    }
 
-public void addPatient(PatientType patient) {
-        
+    public PatientType nextPatient()
+    {
+       return hospital.peek();
     }
-    
-    public PatientType nextPatient() {
-        
+
+    public PatientType treatNextPatient()
+    {
+      return  hospital.remove();
     }
-    
-    public PatientType treatNextPatient() {
-        
+
+    public int numPatients()
+    {
+        return hospital.size();
     }
-    
-    public int numPatients() {
-        
+
+    public String hospitalType()
+    {
+        return "Queue Hospital";
     }
+
+    public String allPatientInfo()
+    {
     
-    public String hospitalType() {
-        
-    }
-    
-    public String allPatientInfo() {
-        
+        //Might cause issues
+        String all = "";
+        for(int i = 0; i < hospital.size(); i++) {
+           all.concat(hospital.remove().toString());
+        }
+        return all;
+  
     }
 }
