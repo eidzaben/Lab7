@@ -15,10 +15,16 @@ public class HealthyPerson extends Person
 
     protected int compareToImpl(Person p)
     {
-         /*  if(this.compareTo(p) == 0) {
-               return 0;
-           } else if ()
-           */
+        //I have no idea if any of this is correct tbh
+        if (!p.getClass().toString().equals(this.getClass().toString())) {
+            return 0;
+        } else if (name.compareTo(p.getName()) > 0) {
+            return -1;
+        } else if (name.compareTo(p.getName()) < 0){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public String toString()
