@@ -7,7 +7,7 @@ import java.util.Queue;
 public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
     private Queue<PatientType> hospital = new LinkedList<PatientType>();;
-    ListIterator<String> listIterator;
+  //  ListIterator<String> listIterator;
     public QueueHospital() {
         hospital = new LinkedList<PatientType>();
     }
