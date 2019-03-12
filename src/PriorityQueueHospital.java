@@ -20,7 +20,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 
     public PatientType treatNextPatient()
     {
-       return hospital.remove();
+       return hospital.poll();
     }
 
     public int numPatients()
