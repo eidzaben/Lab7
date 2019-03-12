@@ -1,26 +1,28 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
     private Deque<PatientType> hospital;
-    public StackHospital() {
+
+    public StackHospital()
+    {
         hospital = new LinkedList<PatientType>();
     }
+
     public void addPatient(PatientType patient)
     {
-       hospital.addFirst(patient);
+        hospital.addFirst(patient);
     }
 
     public PatientType nextPatient()
     {
-          return hospital.peekFirst();
+        return hospital.peekFirst();
     }
 
     public PatientType treatNextPatient()
     {
-           return hospital.removeFirst();
+        return hospital.removeFirst();
     }
 
     public int numPatients()
@@ -30,19 +32,16 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 
     public String hospitalType()
     {
-        //Format might be incorrect when submitted.
+        // Format might be incorrect when submitted.
         return "StackHospital";
     }
 
     public String allPatientInfo()
     {
-        
-    /*    for(int i = 0; i < hospital.size(); i++) {
-            //Check this later
-           all.concat(((LinkedList<PatientType>) hospital).get(i).toString());
-       */
+
         String all = "";
-        for(PatientType p: hospital) {
+        for (PatientType p : hospital)
+        {
             all += p.toString();
         }
         return all;

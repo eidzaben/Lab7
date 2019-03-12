@@ -3,16 +3,16 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Queue;
 
-
 public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
     private Queue<PatientType> hospital = new LinkedList<PatientType>();;
-  //  ListIterator<String> listIterator;
-    public QueueHospital() {
+
+    // ListIterator<String> listIterator;
+    public QueueHospital()
+    {
         hospital = new LinkedList<PatientType>();
     }
-    
-    
+
     public void addPatient(PatientType patient)
     {
         hospital.add(patient);
@@ -20,17 +20,17 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 
     public PatientType nextPatient()
     {
-       return hospital.peek();
+        return hospital.peek();
     }
 
     public PatientType treatNextPatient()
     {
-      return  hospital.remove();
+        return hospital.remove();
     }
 
     public int numPatients()
     {
-        return hospital.size(); 
+        return hospital.size();
     }
 
     public String hospitalType()
@@ -40,18 +40,14 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 
     public String allPatientInfo()
     {
-    
-        //Might cause issues
+
+        // Might cause issues
         String all = "";
-        for (PatientType p : hospital) {
-           all += p.toString();
+        for (PatientType p : hospital)
+        {
+            all += p.toString();
         }
         return all;
-        /*for(int i = 0; i < hospital.size(); i++) {
-           all.concat(hospital.remove().toString());
-        }
-        */
-        
-  
+
     }
 }

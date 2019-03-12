@@ -4,23 +4,25 @@ import java.util.PriorityQueue;
 public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType>
 {
     private PriorityQueue<PatientType> hospital;
-    public PriorityQueueHospital() {
+
+    public PriorityQueueHospital()
+    {
         hospital = new PriorityQueue<PatientType>();
     }
-    
+
     public void addPatient(PatientType patient)
     {
-           hospital.add(patient);
+        hospital.add(patient);
     }
 
     public PatientType nextPatient()
     {
-       return hospital.peek();
+        return hospital.peek();
     }
 
-    public PatientType treatNextPatient() 
+    public PatientType treatNextPatient()
     {
-       return hospital.poll();
+        return hospital.poll();
     }
 
     public int numPatients()
@@ -36,17 +38,11 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
     public String allPatientInfo()
     {
         String all = "";
-        for (PatientType p : hospital) {
+        for (PatientType p : hospital)
+        {
             all += p.toString();
         }
         return all;
-        /*
-        int temp = hospital.size();
-        while(temp > 0) {
-            all.concat(hospital.remove().toString());
-            temp -= 1;
-        }
-        */
-        
+
     }
 }
