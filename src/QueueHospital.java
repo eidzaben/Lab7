@@ -30,12 +30,12 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 
     public int numPatients()
     {
-        return hospital.size();
+        return hospital.size(); 
     }
 
     public String hospitalType()
     {
-        return "Queue Hospital";
+        return "QueueHospital";
     }
 
     public String allPatientInfo()
@@ -43,10 +43,15 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
     
         //Might cause issues
         String all = "";
-        for(int i = 0; i < hospital.size(); i++) {
-           all.concat(hospital.remove().toString());
+        for (PatientType p : hospital) {
+           all += p.toString();
         }
         return all;
+        /*for(int i = 0; i < hospital.size(); i++) {
+           all.concat(hospital.remove().toString());
+        }
+        */
+        
   
     }
 }

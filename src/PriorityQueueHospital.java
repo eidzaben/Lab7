@@ -18,7 +18,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
        return hospital.peek();
     }
 
-    public PatientType treatNextPatient()
+    public PatientType treatNextPatient() 
     {
        return hospital.poll();
     }
@@ -30,15 +30,23 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 
     public String hospitalType()
     {
-        return "Priority Queue Hospital";
+        return "PriorityQueueHospital";
     }
 
     public String allPatientInfo()
     {
         String all = "";
-        while(hospital.size() > 0) {
-            all.concat(hospital.remove().toString());
+        for (PatientType p : hospital) {
+            all += p.toString();
         }
         return all;
+        /*
+        int temp = hospital.size();
+        while(temp > 0) {
+            all.concat(hospital.remove().toString());
+            temp -= 1;
+        }
+        */
+        
     }
 }

@@ -31,15 +31,19 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     public String hospitalType()
     {
         //Format might be incorrect when submitted.
-        return "Stack Hospital";
+        return "StackHospital";
     }
 
     public String allPatientInfo()
     {
-        String all = "";
-        for(int i = 0; i < hospital.size(); i++) {
+        
+    /*    for(int i = 0; i < hospital.size(); i++) {
             //Check this later
            all.concat(((LinkedList<PatientType>) hospital).get(i).toString());
+       */
+        String all = "";
+        for(PatientType p: hospital) {
+            all += p.toString();
         }
         return all;
     }
