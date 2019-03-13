@@ -2,24 +2,24 @@
 public class SickPerson extends Person
 {
 
-    private String name;
-    private int age;
+
     private int severity;
     
+    //Constructor
     public SickPerson(String name, int age, int severity) {
+        //Passes values to parent class
         super(name, age);
-        this.name = name;
-        this.age = age;
+      //Sets severity equal to instance variable
         this.severity = severity;
     }
+    
+    //Getter that returns severity
     private int getSeverity() {
         return severity;
     }
-    
+     
     protected int compareToImpl(Person o) {
-        if (!this.getClass().toString().equalsIgnoreCase(o.getClass().toString())) {
-            return 0;
-        } 
+      //Series of if else statements that return 0,-1, or 1 depending on severity
         if (!(o instanceof SickPerson)) {
             return 0;
         } else if(this.getSeverity() > ((SickPerson) o).getSeverity()) {
@@ -29,12 +29,12 @@ public class SickPerson extends Person
         } else {
             return 0;
         }
-        //How do I compare the severity of O with this, more specifically how do I access o's severity
       
     }
     
     @Override
     public String toString() {
+        //Overrides parent class toString
         return String.format("%s Severity level %d", super.toString(), severity);
     }
 }
