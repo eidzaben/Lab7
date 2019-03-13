@@ -9,7 +9,7 @@ public class HealthyPersonTest
     @Test
     public void healthyPersonTest()
     {
-        //Creating patients to use in tests
+        // Creating patients to use in tests
         HealthyPerson healthy = new HealthyPerson("eid", 18, "check up");
         HealthyPerson healthy2 = new HealthyPerson("bob", 20, "sad");
         HealthyPerson healthy3 = new HealthyPerson("zan", 28, "mad");

@@ -13,7 +13,7 @@ public class SickPerson extends Person
         this.severity = severity;
     }
     
-    //Getter that returns severity
+    // Getter that returns severity
     private int getSeverity() {
         return severity;
     }
